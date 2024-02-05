@@ -12,7 +12,6 @@
 using namespace std;
 int get_int_from_user();
 double get_float_from_user();
-void print_locations()
 void get_parameters();
 int get_menu_option();
 int selection;
@@ -42,10 +41,9 @@ int main() {
 
         }
     }
-    cout << "The x-postions of your holes are as follows: " ;
+    print_locations(xOffsetList, yOffsetList);
 
 }
-//hi
 void get_menu_option(int &selection) {
     cout << "Please select from the following options: " << endl;
     cout << "1. Bolt Hole Circle" << endl;
@@ -75,8 +73,20 @@ void get_paramters() {
     cout << endl;
 }
 void print_locations(vector<float> &xOffsetListInput, vector<float> &yOffsetListInput) {
-
-
+    cout << "Here are the x-positions of your holes: " ;
+    for (int i = 0; i < xOffsetListInput.size(); i++ ) {
+        cout << xOffsetListInput[i];
+        if (i < (xOffsetListInput.size() - 1)) {
+            cout << ", ";
+        }
+    }
+    cout << "Here are the y-positions of your holes: " ;
+    for (int i = 0; i < yOffsetListInput.size(); i++ ) {
+        cout << yOffsetListInput[i];
+        if (i < (yOffsetListInput.size() - 1)) {
+            cout << ", ";
+        }
+    }
 }
 
 
