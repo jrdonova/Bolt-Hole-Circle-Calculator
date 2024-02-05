@@ -12,9 +12,11 @@
 using namespace std;
 // int get_int_from_user();
 // double get_float_from_user();
+// Obtains user input for the calculations
 void get_parameters();
+// Obtains which pattern type the user wants
 void get_menu_option(int &selection);
-
+// Prints the locations of each hole
 void print_locations(vector<float> vector1, vector<float> vector2);
 
 int selection;
@@ -47,6 +49,23 @@ int main() {
         }
     }
     print_locations(xOffsetList, yOffsetList);
+    cout << "Enter some parameters for a square pattern! " << endl;
+    Bolt_Hole_Pattern layout2;
+    selection = 2;
+    get_parameters();
+    layout.Bolt_Hole_Square(size, firstHoleAngle, xOffset, yOffset, xOffsetList, yOffsetList);
+    if  (layout == layout2) {
+        cout << "Your pattern is the same size as the square pattern!" << endl;
+    }
+    else {
+        if (layout <= layout2) {
+            cout << "Your pattern is less than or equal too a square pattern" << endl;
+        }
+        if (layout >= layout2) {
+            cout << "Your pattern is greater than or equal too a square pattern" << endl;
+        }
+    }
+
 return 0;
 }
 
@@ -93,7 +112,7 @@ void get_parameters() {
     cout << "Please enter the counterclockwise angle in degrees your first hole is offset from the x-axis: ";
     cin >> firstHoleAngle;
     cout << endl;
-    cout << "Please enter the x-position offset of the center of you bolt hole pattern" ;
+    cout << "Please enter the x-position offset of the center of you bolt hole pattern: " ;
     cin >> xOffset;
     cout << endl;
     cout << "Please enter the y-position offset of the center of your bolt hole pattern: ";
