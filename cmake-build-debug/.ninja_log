@@ -1,4 +1,16 @@
 # ninja log v5
-4	331	7287022957110495	build.ninja	a9ccf3736ddbc717
+1	271	7288074490334355	build.ninja	a9ccf3736ddbc717
+7	174	7288073229448707	CMakeFiles/M1OEP_jrdonova.dir/Bolt_Hole_Pattern.cpp.obj	f47172063a5665bc
 1	115	7287022961763388	CMakeFiles/M1OEP_jrdonova.dir/Calculator_Functions.cpp.obj	149cd846206b1959
-7	581	7287022966446801	CMakeFiles/M1OEP_jrdonova.dir/main.cpp.obj	929710acb8056158
+3	318	7288073230895794	CMakeFiles/M1OEP_jrdonova.dir/main.cpp.obj	929710acb8056158
+3	303	7288077884077191	CMakeFiles/M1OEP_jrdonova.dir/main.cpp.obj	929710acb8056158
+3	302	7288078226863435	CMakeFiles/M1OEP_jrdonova.dir/main.cpp.obj	929710acb8056158
+2	313	7288079606553267	CMakeFiles/M1OEP_jrdonova.dir/main.cpp.obj	929710acb8056158
+6	164	7288080967318517	CMakeFiles/M1OEP_jrdonova.dir/Bolt_Hole_Pattern.cpp.obj	f47172063a5665bc
+6	169	7288083967730456	CMakeFiles/M1OEP_jrdonova.dir/Bolt_Hole_Pattern.cpp.obj	f47172063a5665bc
+2	312	7288083969151763	CMakeFiles/M1OEP_jrdonova.dir/main.cpp.obj	929710acb8056158
+312	396	7288083969961726	M1OEP_jrdonova.exe	3a9be3fb05431a01
+2	303	7288087534644190	CMakeFiles/M1OEP_jrdonova.dir/main.cpp.obj	929710acb8056158
+303	385	7288087535457696	M1OEP_jrdonova.exe	3a9be3fb05431a01
+3	297	7288088278979400	CMakeFiles/M1OEP_jrdonova.dir/main.cpp.obj	929710acb8056158
+297	369	7288088279663009	M1OEP_jrdonova.exe	3a9be3fb05431a01

@@ -11,7 +11,7 @@ using namespace std;
         firstHoleAngle = 0;
         xOffset = 0;
         yOffset = 0;
-        type = circle;
+         // type = circle;
     }
     void Bolt_Hole_Pattern::Bolt_Hole_Circle(int holenum, float inputSize, float inputFirstHoleAngle, float inputXOffset, float inputYOffset,  vector<float> &vecX, vector<float> &vecY) {
         float xPos, yPos, spacing;
@@ -20,7 +20,7 @@ using namespace std;
         firstHoleAngle = inputFirstHoleAngle;
         xOffset = inputXOffset;
         yOffset = inputYOffset;
-        type = circle;
+        //type = circle;
         float first_hole_radians = (firstHoleAngle * M_PI) / 180;
         float i = 0;
         for (int k = 1; k <= numHoles; k++ ) {
@@ -39,7 +39,7 @@ using namespace std;
         firstHoleAngle = inputFirstHoleAngle;
         xOffset = inputXOffset;
         yOffset = inputYOffset;
-        type = square;
+        //type = square;
         float first_hole_radians = (firstHoleAngle * M_PI) / 180;
         float i = (M_PI / 4);
         for (int k = 1; k <= 4; k++ ) {
@@ -56,7 +56,7 @@ using namespace std;
         firstHoleAngle = inputFirstHoleAngle;
         xOffset = inputXOffset;
         yOffset = inputYOffset;
-        type = hex;
+        // type = hex;
         float first_hole_radians = (firstHoleAngle * M_PI) / 180;
         float i = (M_PI / 3);
         for (int k = 1; k <= 4; k++ ) {
@@ -66,5 +66,16 @@ using namespace std;
             vecX.push_back(xPos);
             vecY.push_back(yPos);
         }
+    }
+    bool Bolt_Hole_Pattern::operator == (const Bolt_Hole_Pattern& rhs) {
+        return numHoles == rhs.numHoles;
+    }
+
+    bool Bolt_Hole_Pattern::operator <= (const Bolt_Hole_Pattern& rhs) {
+        return numHoles <= rhs.numHoles;
+    }
+
+    bool Bolt_Hole_Pattern::operator >= (const Bolt_Hole_Pattern& rhs) {
+        return numHoles >= rhs.numHoles;
     }
 

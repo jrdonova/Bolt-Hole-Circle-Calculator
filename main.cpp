@@ -10,10 +10,13 @@
 #include <fstream>
 
 using namespace std;
-int get_int_from_user();
-double get_float_from_user();
+// int get_int_from_user();
+// double get_float_from_user();
 void get_parameters();
-int get_menu_option();
+void get_menu_option(int &selection);
+
+void print_locations(vector<float> vector1, vector<float> vector2);
+
 int selection;
 vector<float> xOffsetList;
 vector<float> yOffsetList;
@@ -22,28 +25,50 @@ int numHoles;
 float size, firstHoleAngle, xOffset, yOffset;
 int main() {
     cout << "---------------------" << endl << "Bolt Hole Pattern Calculator" << endl << "---------------------" << endl;
-    get_menu_option();
+    get_menu_option(selection);
     switch (selection) {
         case 1: {
-            Bolt_Hole_Pattern::type = Bolt_Hole_Pattern::circle;
+            //Bolt_Hole_Pattern::type = Bolt_Hole_Pattern::circle;
             get_parameters();
             layout.Bolt_Hole_Circle(numHoles, size, firstHoleAngle, xOffset, yOffset, xOffsetList, yOffsetList);
+            break;
         }
         case 2: {
-            Bolt_Hole_Pattern::type = Bolt_Hole_Pattern::square;
+           // Bolt_Hole_Pattern::type = Bolt_Hole_Pattern::square;
             get_parameters();
             layout.Bolt_Hole_Square(size, firstHoleAngle, xOffset, yOffset, xOffsetList, yOffsetList);
+            break;
         }
         case 3: {
-            Bolt_Hole_Pattern::type = Bolt_Hole_Pattern::hex;
+           // Bolt_Hole_Pattern::type = Bolt_Hole_Pattern::hex;
             get_parameters();
             layout.Bolt_Hole_Hex(size, firstHoleAngle, xOffset, yOffset, xOffsetList, yOffsetList);
-
+            break;
         }
     }
     print_locations(xOffsetList, yOffsetList);
-
+return 0;
 }
+
+void print_locations(vector<float> xOffsetListInput, vector<float> yOffsetListInput) {
+    cout << "Here are the x-positions of your holes: " ;
+    for (int i = 0; i < xOffsetListInput.size(); i++ ) {
+        cout << xOffsetListInput[i];
+        if (i < (xOffsetListInput.size() - 1)) {
+            cout << ", ";
+        }
+    }
+    cout << endl;
+    cout << "Here are the y-positions of your holes: " ;
+    for (int i = 0; i < yOffsetListInput.size(); i++ ) {
+        cout << yOffsetListInput[i];
+        if (i < (yOffsetListInput.size() - 1)) {
+            cout << ", ";
+        }
+    }
+    cout << endl;
+}
+
 void get_menu_option(int &selection) {
     cout << "Please select from the following options: " << endl;
     cout << "1. Bolt Hole Circle" << endl;
@@ -56,12 +81,15 @@ void get_menu_option(int &selection) {
     selection = input;
 
 }
-void get_paramters() {
-    if (Bolt_Hole_Pattern::type == Bolt_Hole_Pattern::circle) {
+void get_parameters() {
+    if (selection == 1) {
         cout << "Please enter the number of holes in your pattern: ";
         cin >> numHoles;
         cout << endl;
     }
+    cout << "Please enter the opposite hole distance of your pattern: ";
+    cin >> size;
+    cout << endl;
     cout << "Please enter the counterclockwise angle in degrees your first hole is offset from the x-axis: ";
     cin >> firstHoleAngle;
     cout << endl;
@@ -71,22 +99,6 @@ void get_paramters() {
     cout << "Please enter the y-position offset of the center of your bolt hole pattern: ";
     cin >> yOffset;
     cout << endl;
-}
-void print_locations(vector<float> &xOffsetListInput, vector<float> &yOffsetListInput) {
-    cout << "Here are the x-positions of your holes: " ;
-    for (int i = 0; i < xOffsetListInput.size(); i++ ) {
-        cout << xOffsetListInput[i];
-        if (i < (xOffsetListInput.size() - 1)) {
-            cout << ", ";
-        }
-    }
-    cout << "Here are the y-positions of your holes: " ;
-    for (int i = 0; i < yOffsetListInput.size(); i++ ) {
-        cout << yOffsetListInput[i];
-        if (i < (yOffsetListInput.size() - 1)) {
-            cout << ", ";
-        }
-    }
 }
 
 
