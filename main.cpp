@@ -12,6 +12,7 @@
 using namespace std;
 int get_int_from_user();
 double get_float_from_user();
+void print_locations()
 void get_parameters();
 int get_menu_option();
 int selection;
@@ -27,14 +28,18 @@ int main() {
         case 1: {
             Bolt_Hole_Pattern::type = Bolt_Hole_Pattern::circle;
             get_parameters();
+            layout.Bolt_Hole_Circle(numHoles, size, firstHoleAngle, xOffset, yOffset, xOffsetList, yOffsetList);
         }
         case 2: {
             Bolt_Hole_Pattern::type = Bolt_Hole_Pattern::square;
             get_parameters();
+            layout.Bolt_Hole_Square(size, firstHoleAngle, xOffset, yOffset, xOffsetList, yOffsetList);
         }
         case 3: {
             Bolt_Hole_Pattern::type = Bolt_Hole_Pattern::hex;
             get_parameters();
+            layout.Bolt_Hole_Hex(size, firstHoleAngle, xOffset, yOffset, xOffsetList, yOffsetList);
+
         }
     }
     cout << "The x-postions of your holes are as follows: " ;
@@ -68,6 +73,10 @@ void get_paramters() {
     cout << "Please enter the y-position offset of the center of your bolt hole pattern: ";
     cin >> yOffset;
     cout << endl;
+}
+void print_locations(vector<float> &xOffsetListInput, vector<float> &yOffsetListInput) {
+
+
 }
 
 
