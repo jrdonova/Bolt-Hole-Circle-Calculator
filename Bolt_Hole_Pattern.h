@@ -8,15 +8,19 @@
 #include <cmath>
 using namespace std;
 
+enum  Pattern { circle , square , hex };
+
 class Bolt_Hole_Pattern {
 private:
     int numHoles;
     float size, firstHoleAngle, xOffset, yOffset;
+    Pattern type;
 public:
    // enum  Pattern { circle , square , hex };
-   // Pattern type;
+    //Pattern type;
     // Default contructor
     Bolt_Hole_Pattern();
+    void set_type(Pattern type);
     // Calculates cartesian hole postion of a bolt hole circle
     void Bolt_Hole_Circle(int holenum, float inputSize, float inputFirstHoleAngle, float inputXOffset, float inputYOffset, vector<float> &vecX, vector<float> &vecY);
     // Calculates cartesian hole postion of a bolt hole square

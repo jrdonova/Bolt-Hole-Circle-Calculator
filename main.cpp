@@ -65,7 +65,7 @@ int main() {
             cout << "Your pattern is greater than or equal too a square pattern" << endl;
         }
     }
-
+    layout.set_type(circle)
 return 0;
 }
 
